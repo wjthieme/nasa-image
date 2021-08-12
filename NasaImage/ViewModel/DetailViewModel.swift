@@ -7,15 +7,14 @@
 
 import Foundation
 
-protocol DetailViewModel: BaseViewModel {
-    func bind(_ controller: DetailController)
+protocol DetailViewModel: AnyObject {
+    
 }
 
 class DetailViewModelImpl: BaseViewModel, DetailViewModel {
     
-    
-    func bind(_ controller: DetailController) {
-
+    init(_ image: NasaAsset? = nil) {
+        
     }
     
 }

@@ -7,31 +7,19 @@
 
 import UIKit
 
-protocol OverviewController: UIViewController {
-    var viewModel: OverviewViewModel { get }
-    var searchBar: UISearchBar { get }
-    var collectionView: UICollectionView { get }
-    var collectionViewLayout: UICollectionViewFlowLayout { get }
-    var refreshControl: UIRefreshControl { get }
-}
+fileprivate let cellReuseIdentifier = "OverviewControllerReuse"
+fileprivate let endReuseIdentifier = "OverviewControllerReuseEnd"
 
-class OverviewControllerImpl: UIViewController, OverviewController {
-    let viewModel: OverviewViewModel
+class OverviewController: UIViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
+    
+    var viewModel: OverviewViewModel = OverviewViewModelImpl()
 
     let statusBarView = UIView()
     let searchBar = UISearchBar()
     let collectionViewLayout = UICollectionViewFlowLayout()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
     let refreshControl = UIRefreshControl()
-    
-    init(_ viewModel: OverviewViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +29,21 @@ class OverviewControllerImpl: UIViewController, OverviewController {
         configureStatusBarView()
         configureSearchBar()
         configureCollectionView()
+        configureCollectionViewLayout()
         configureRefreshControl()
         
-        viewModel.bind(self)
+        viewModel.imagesDidUpdate = { [weak self] index in self?.contentShouldUpdate(index) }
+        viewModel.updateError = { [weak self] error in self?.shouldShowError(error) }
+        
+        refresh(refreshControl: refreshControl)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { [self] context in
+            configureCollectionViewLayout()
+        })
+
     }
     
     func configureStatusBarView() {
@@ -60,6 +60,8 @@ class OverviewControllerImpl: UIViewController, OverviewController {
     
     func configureSearchBar() {
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.delegate = self
+        searchBar.placeholder = NSLocalizedString("searchPlaceholder", comment: "")
         
         view.addSubview(searchBar)
         
@@ -71,7 +73,11 @@ class OverviewControllerImpl: UIViewController, OverviewController {
     func configureCollectionView() {
         collectionView.backgroundColor = .clear
         collectionView.alwaysBounceVertical = true
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(ImageCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
+        collectionView.register(LoaderButton.self, forSupplementaryViewOfKind: endReuseIdentifier, withReuseIdentifier: endReuseIdentifier)
         
         view.addSubview(collectionView)
         
@@ -81,11 +87,73 @@ class OverviewControllerImpl: UIViewController, OverviewController {
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
+    func configureCollectionViewLayout() {
+        collectionViewLayout.minimumInteritemSpacing = 0
+        collectionViewLayout.minimumLineSpacing = 0
+        collectionViewLayout.itemSize = CGSize(width: view.bounds.width / 3, height: view.bounds.width / 3)
+    }
+    
+    
     func configureRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         collectionView.addSubview(refreshControl)
     }
+    
+    func contentShouldUpdate(_ index: Int) {
+        if index == -1 {
+            refreshControl.endRefreshing()
+            collectionView.reloadData()
+        } else {
+            collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
+        }
+    }
+    
+    func shouldShowError(_ error: Error) {
+        refreshControl.endRefreshing()
+        let title = NSLocalizedString("downloadError", comment: "")
+        let message = NSLocalizedString("downloadErrorMessage", comment: "")
+        let ok = NSLocalizedString("ok", comment: "")
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: ok, style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 
+}
 
+extension OverviewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItems()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath)
+        if let cell = cell as? ImageCell {
+            cell.imageView.image = viewModel.image(indexPath.row)
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didPressItem(indexPath.row)
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        let cell = collectionView.deque
+//    }
+    
+}
 
+extension OverviewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.startUpdating(searchText, page: 1)
+    }
+}
+
+extension OverviewController {
+    @objc func refresh(refreshControl: UIRefreshControl) {
+        refreshControl.beginRefreshing()
+        let query = (searchBar.text?.isEmpty ?? true) ? searchBar.placeholder : searchBar.text
+        viewModel.startUpdating(query ?? "", page: 1)
+    }
 }
 

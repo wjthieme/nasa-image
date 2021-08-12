@@ -18,10 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
 
-        coordinator = ViewCoordinatorImpl(NavigationControllerImpl())
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = coordinator?.navigationController
-        window?.makeKeyAndVisible()
+        coordinator = ViewCoordinatorImpl()
+        coordinator?.overview()
         
         return true
     }

@@ -7,28 +7,15 @@
 
 import UIKit
 
-protocol DetailController: UIViewController {
-    var viewModel: DetailViewModel { get  }
-}
-
-
-class DetailControllerImpl: UIViewController, DetailController {
-    let viewModel: DetailViewModel
+class DetailController: UIViewController {
+    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
-    
-    init(_ viewModel: DetailViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var viewModel: DetailViewModel = DetailViewModelImpl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel.bind(self)
+
     }
     
 }

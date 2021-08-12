@@ -10,26 +10,25 @@ import UIKit
 protocol ViewCoordinator: AnyObject {
     var navigationController: NavigationController { get set }
     func overview()
-    func detail()
+    func detail(_ image: NasaAsset?)
 }
 
 class ViewCoordinatorImpl: ViewCoordinator {
-    var navigationController: NavigationController
-    
-    init(_ navigationController: NavigationController) {
-        self.navigationController = navigationController
-        overview()
-    }
+    var navigationController: NavigationController = NavigationControllerImpl()
     
     func overview() {
-        let controller = OverviewControllerImpl(OverviewViewModelImpl())
-        controller.viewModel.coordinatior = self
+        let viewModel = OverviewViewModelImpl()
+        viewModel.coordinatior = self
+        let controller = OverviewController()
+        controller.viewModel = viewModel
         navigationController.navigate(to: controller, animated: true)
     }
     
-    func detail() {
-        let controller = DetailControllerImpl(DetailViewModelImpl())
-        controller.viewModel.coordinatior = self
+    func detail(_ image: NasaAsset?) {
+        let viewModel = DetailViewModelImpl(image)
+        viewModel.coordinatior = self
+        let controller = DetailController()
+        controller.viewModel = viewModel
         navigationController.navigate(to: controller, animated: true)
     }
     

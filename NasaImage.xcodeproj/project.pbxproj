@@ -11,7 +11,6 @@
 		EDC3499026C58A1300A19091 /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3498F26C58A1300A19091 /* OverviewController.swift */; };
 		EDC3499526C58A1400A19091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC3499426C58A1400A19091 /* Assets.xcassets */; };
 		EDC3499826C58A1400A19091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDC3499626C58A1400A19091 /* LaunchScreen.storyboard */; };
-		EDC349A626C58A3300A19091 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349A526C58A3300A19091 /* Tests.swift */; };
 		EDC349B626C58B5400A19091 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349B526C58B5400A19091 /* ApiService.swift */; };
 		EDC349B826C58B5D00A19091 /* OverviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349B726C58B5D00A19091 /* OverviewViewModel.swift */; };
 		EDC349BA26C58B6800A19091 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349B926C58B6800A19091 /* DetailController.swift */; };
@@ -20,9 +19,16 @@
 		EDC349C226C58DFF00A19091 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C126C58DFF00A19091 /* NavigationController.swift */; };
 		EDC349C626C5903700A19091 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C526C5903700A19091 /* CoordinatorTests.swift */; };
 		EDC349C826C5947900A19091 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C726C5947900A19091 /* BaseViewModel.swift */; };
-		EDC349CA26C597A800A19091 /* NasaImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C926C597A800A19091 /* NasaImage.swift */; };
-		EDC349CC26C597FD00A19091 /* NasaLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349CB26C597FD00A19091 /* NasaLink.swift */; };
+		EDC349CA26C597A800A19091 /* NasaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C926C597A800A19091 /* NasaAsset.swift */; };
 		EDC349CE26C5990800A19091 /* NasaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349CD26C5990800A19091 /* NasaSearch.swift */; };
+		EDC349D126C5B1B700A19091 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDC349D326C5B1B700A19091 /* Localizable.strings */; };
+		EDC349D726C5B81400A19091 /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349D626C5B81400A19091 /* ImageType.swift */; };
+		EDC349D926C5B97A00A19091 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349D826C5B97A00A19091 /* NetworkingService.swift */; };
+		EDC349DB26C5BB0100A19091 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349DA26C5BB0100A19091 /* Reachability.swift */; };
+		EDC349DD26C5BBE200A19091 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349DC26C5BBE200A19091 /* NetworkingError.swift */; };
+		EDC349E126C5C42500A19091 /* LoaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E026C5C42500A19091 /* LoaderButton.swift */; };
+		EDC349E326C5C94000A19091 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E226C5C94000A19091 /* ImageCell.swift */; };
+		EDC349E526C5D18600A19091 /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E426C5D18600A19091 /* ApiServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +49,6 @@
 		EDC3499726C58A1400A19091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EDC3499926C58A1400A19091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDC349A326C58A3300A19091 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDC349A526C58A3300A19091 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		EDC349A726C58A3300A19091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDC349AD26C58A5300A19091 /* NasaImage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NasaImage.entitlements; sourceTree = "<group>"; };
 		EDC349B526C58B5400A19091 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
@@ -54,9 +59,16 @@
 		EDC349C126C58DFF00A19091 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		EDC349C526C5903700A19091 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		EDC349C726C5947900A19091 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
-		EDC349C926C597A800A19091 /* NasaImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaImage.swift; sourceTree = "<group>"; };
-		EDC349CB26C597FD00A19091 /* NasaLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaLink.swift; sourceTree = "<group>"; };
+		EDC349C926C597A800A19091 /* NasaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAsset.swift; sourceTree = "<group>"; };
 		EDC349CD26C5990800A19091 /* NasaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaSearch.swift; sourceTree = "<group>"; };
+		EDC349D226C5B1B700A19091 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EDC349D626C5B81400A19091 /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
+		EDC349D826C5B97A00A19091 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
+		EDC349DA26C5BB0100A19091 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		EDC349DC26C5BBE200A19091 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		EDC349E026C5C42500A19091 /* LoaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderButton.swift; sourceTree = "<group>"; };
+		EDC349E226C5C94000A19091 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		EDC349E426C5D18600A19091 /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +125,8 @@
 		EDC349A426C58A3300A19091 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				EDC349A526C58A3300A19091 /* Tests.swift */,
 				EDC349C526C5903700A19091 /* CoordinatorTests.swift */,
+				EDC349E426C5D18600A19091 /* ApiServiceTests.swift */,
 				EDC349A726C58A3300A19091 /* Info.plist */,
 			);
 			path = Tests;
@@ -133,6 +145,8 @@
 		EDC349AF26C58AC600A19091 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EDC349E226C5C94000A19091 /* ImageCell.swift */,
+				EDC349E026C5C42500A19091 /* LoaderButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,9 +164,9 @@
 		EDC349B126C58ACF00A19091 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EDC349C926C597A800A19091 /* NasaImage.swift */,
-				EDC349CB26C597FD00A19091 /* NasaLink.swift */,
 				EDC349CD26C5990800A19091 /* NasaSearch.swift */,
+				EDC349C926C597A800A19091 /* NasaAsset.swift */,
+				EDC349D626C5B81400A19091 /* ImageType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +174,7 @@
 		EDC349B226C58ADB00A19091 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EDC349D826C5B97A00A19091 /* NetworkingService.swift */,
 				EDC349B526C58B5400A19091 /* ApiService.swift */,
 				EDC349BD26C58C3600A19091 /* ViewCoordinator.swift */,
 			);
@@ -169,6 +184,8 @@
 		EDC349B326C58AE000A19091 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				EDC349DA26C5BB0100A19091 /* Reachability.swift */,
+				EDC349DC26C5BBE200A19091 /* NetworkingError.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -180,6 +197,7 @@
 				EDC3499426C58A1400A19091 /* Assets.xcassets */,
 				EDC3499626C58A1400A19091 /* LaunchScreen.storyboard */,
 				EDC3499926C58A1400A19091 /* Info.plist */,
+				EDC349D326C5B1B700A19091 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -265,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC3499826C58A1400A19091 /* LaunchScreen.storyboard in Resources */,
+				EDC349D126C5B1B700A19091 /* Localizable.strings in Resources */,
 				EDC3499526C58A1400A19091 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,15 +304,20 @@
 			files = (
 				EDC3499026C58A1300A19091 /* OverviewController.swift in Sources */,
 				EDC349C826C5947900A19091 /* BaseViewModel.swift in Sources */,
-				EDC349CA26C597A800A19091 /* NasaImage.swift in Sources */,
+				EDC349DD26C5BBE200A19091 /* NetworkingError.swift in Sources */,
+				EDC349E126C5C42500A19091 /* LoaderButton.swift in Sources */,
+				EDC349CA26C597A800A19091 /* NasaAsset.swift in Sources */,
 				EDC349C226C58DFF00A19091 /* NavigationController.swift in Sources */,
 				EDC349CE26C5990800A19091 /* NasaSearch.swift in Sources */,
+				EDC349D926C5B97A00A19091 /* NetworkingService.swift in Sources */,
 				EDC349BC26C58B7000A19091 /* DetailViewModel.swift in Sources */,
+				EDC349DB26C5BB0100A19091 /* Reachability.swift in Sources */,
+				EDC349E326C5C94000A19091 /* ImageCell.swift in Sources */,
 				EDC349B826C58B5D00A19091 /* OverviewViewModel.swift in Sources */,
 				EDC3498C26C58A1300A19091 /* AppDelegate.swift in Sources */,
 				EDC349BA26C58B6800A19091 /* DetailController.swift in Sources */,
+				EDC349D726C5B81400A19091 /* ImageType.swift in Sources */,
 				EDC349B626C58B5400A19091 /* ApiService.swift in Sources */,
-				EDC349CC26C597FD00A19091 /* NasaLink.swift in Sources */,
 				EDC349BE26C58C3600A19091 /* ViewCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,7 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC349C626C5903700A19091 /* CoordinatorTests.swift in Sources */,
-				EDC349A626C58A3300A19091 /* Tests.swift in Sources */,
+				EDC349E526C5D18600A19091 /* ApiServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +348,14 @@
 				EDC3499726C58A1400A19091 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EDC349D326C5B1B700A19091 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDC349D226C5B1B700A19091 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

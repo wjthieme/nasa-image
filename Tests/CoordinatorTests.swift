@@ -12,27 +12,31 @@ class CoordinatorTests: XCTestCase {
     
     func testCoordinatorInitialState() {
         let mockNavigation = MockNavigation()
-        _ = ViewCoordinatorImpl(mockNavigation)
-        XCTAssert(mockNavigation.controller is OverviewController)
+        let coordinator = ViewCoordinatorImpl()
+        coordinator.navigationController = mockNavigation
+        XCTAssertFalse(mockNavigation.controller is OverviewController)
+        XCTAssertFalse(mockNavigation.controller is DetailController)
     }
     
     func testCoordinatorOverview() {
         let mockNavigation = MockNavigation()
-        let coordinator = ViewCoordinatorImpl(mockNavigation)
+        let coordinator = ViewCoordinatorImpl()
+        coordinator.navigationController = mockNavigation
         coordinator.overview()
         XCTAssert(mockNavigation.controller is OverviewController)
     }
     
     func testCoordinatorDetail() {
         let mockNavigation = MockNavigation()
-        let coordinator = ViewCoordinatorImpl(mockNavigation)
-        coordinator.detail()
+        let coordinator = ViewCoordinatorImpl()
+        coordinator.navigationController = mockNavigation
+        coordinator.detail(nil)
         XCTAssert(mockNavigation.controller is DetailController)
     }
     
 }
 
-class MockNavigation: UIViewController, NavigationController {
+class MockNavigation: NavigationController {
     var controller: UIViewController?
     func navigate(to controller: UIViewController, animated: Bool) {
         self.controller = controller

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  NasaImage
+
+  Created by Wilhelm Thieme on 12/08/2021.
+  
+*/
+"downloadError" = "Refresh Failed";
+"downloadErrorMessage" = "Failed getting images from the NASA API. Please check your internet connection and try again.";
+"ok" = "Ok";
+"searchPlaceholder" = "Apollo";

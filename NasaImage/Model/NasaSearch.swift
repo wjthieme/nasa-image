@@ -12,10 +12,9 @@ class NasaSearch: Codable {
 }
 
 class NasaCollection: Codable {
-    let items: NasaItems
-    let links: [NasaLink]
+    let items: [NasaItems]
 }
 
 class NasaItems: Codable {
-    let data: [NasaImage]
+    let data: [NasaAsset]
 }

@@ -8,5 +8,6 @@
 import UIKit
 
 class BaseViewModel: NSObject {
-    weak var coordinatior: ViewCoordinator?
+    var coordinatior: ViewCoordinator = ViewCoordinatorImpl()
+    var apiService: ApiService = ApiServiceImpl()
 }

@@ -23,6 +23,15 @@ class OverviewControllerTests: XCTestCase {
         controller.viewModel = viewModel
         addSnapshot(of: controller)
     }
+    
+    func testSnapshotWithLoader() {
+        let viewModel = OverviewViewModelMock()
+        viewModel.showFooter = true
+        viewModel.callbacks = false
+        let controller = OverviewController()
+        controller.viewModel = viewModel
+        addSnapshot(of: controller)
+    }
 }
 
 

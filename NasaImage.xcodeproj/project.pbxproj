@@ -38,7 +38,6 @@
 		EDC349F626C662F300A19091 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F526C662F300A19091 /* DetailViewModelTests.swift */; };
 		EDC349F826C6633B00A19091 /* OverviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F726C6633B00A19091 /* OverviewControllerTests.swift */; };
 		EDC349FA26C6635500A19091 /* DetailControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F926C6635500A19091 /* DetailControllerTests.swift */; };
-		EDC349FE26C69FB700A19091 /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDC349FD26C69FB700A19091 /* test_image.jpg */; };
 		EDC34A0126C6A07F00A19091 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A0026C6A07F00A19091 /* ApiService.swift */; };
 		EDC34A0326C6A09F00A19091 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A0226C6A09F00A19091 /* NavigationController.swift */; };
 		EDC34A0526C6A0B400A19091 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A0426C6A0B400A19091 /* NetworkService.swift */; };
@@ -50,6 +49,7 @@
 		EDC34A1126C6ABC100A19091 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A1026C6ABC100A19091 /* Extension.swift */; };
 		EDC34A1326C6B27600A19091 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A1226C6B27600A19091 /* DeviceService.swift */; };
 		EDC34A1526C6B31D00A19091 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A1426C6B31D00A19091 /* DeviceService.swift */; };
+		EDC34A1726C6CB5D00A19091 /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDC34A1626C6CB5D00A19091 /* test_image.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +99,6 @@
 		EDC349F526C662F300A19091 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
 		EDC349F726C6633B00A19091 /* OverviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewControllerTests.swift; sourceTree = "<group>"; };
 		EDC349F926C6635500A19091 /* DetailControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerTests.swift; sourceTree = "<group>"; };
-		EDC349FD26C69FB700A19091 /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpg; sourceTree = "<group>"; };
 		EDC34A0026C6A07F00A19091 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		EDC34A0226C6A09F00A19091 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		EDC34A0426C6A0B400A19091 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		EDC34A1026C6ABC100A19091 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		EDC34A1226C6B27600A19091 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 		EDC34A1426C6B31D00A19091 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		EDC34A1626C6CB5D00A19091 /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +260,7 @@
 			children = (
 				EDC349E926C6591600A19091 /* search_valid.json */,
 				EDC349EB26C6592900A19091 /* search_invalid.json */,
-				EDC349FD26C69FB700A19091 /* test_image.jpg */,
+				EDC34A1626C6CB5D00A19091 /* test_image.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 			files = (
 				EDC349EA26C6591600A19091 /* search_valid.json in Resources */,
 				EDC349EC26C6592900A19091 /* search_invalid.json in Resources */,
-				EDC349FE26C69FB700A19091 /* test_image.jpg in Resources */,
+				EDC34A1726C6CB5D00A19091 /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

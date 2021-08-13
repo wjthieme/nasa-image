@@ -7,6 +7,6 @@
 
 # TODO
 
-- [] Images are not cleared from memory when endless scrolling which results in infinite memory expansion
-- [] Snapshot testing should run on multiple devices and actually compare screenshots
-- [] Sometimes runs into 403 error which seems to be a rate limit by the backend
+- [ ] Images are not cleared from memory when endless scrolling which results in infinite memory expansion
+- [ ] Snapshot testing should run on multiple devices and actually compare screenshots
+- [ ] Sometimes runs into 403 error which seems to be a rate limit by the backend

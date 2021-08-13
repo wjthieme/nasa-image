@@ -31,7 +31,7 @@ class Util {
     }()
     
     
-    @discardableResult static func takeScreenshot(of controller: UIViewController) -> UIImage {
+    static func takeScreenshot(of controller: UIViewController) -> UIImage {
         let window = UIApplication.shared.windows.first!
         window.rootViewController = controller
         let scale = UIScreen.main.scale

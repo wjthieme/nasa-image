@@ -9,7 +9,7 @@ With the Nasa Image Search app you can browse and search Nasa images. This app u
 The app supports the following platforms:
 * iOS 13+
 * iPadOS 13+
-* MacOS 10.15+ (through Catalyst)
+* MacOS 10.15+ (through MacOS Catalyst)
 
 An automatic build/test pipeline runs through Github Actions. The pipeline consists of the following steps:
 1. Build the app and run all the tests
@@ -25,6 +25,6 @@ The app can be built from source using Xcode, just checkout the repository and o
 
 ### Known issues
 
-- [ ] Endless scrolling results in infinite memory expansion as images are kept in memory and only cleared if the search query is changed
-- [ ] Snapshot testing should run on multiple devices and actually compare screenshots between different runs
-- [ ] Sometimes runs into 403 error which seems to be caused by rate limiting done by the backend
+- [ ] Endless scrolling results in infinite memory expansion as images are kept in memory and only cleared once the search query is changed.
+- [ ] Snapshot testing should run on multiple devices and actually compare screenshots between different runs.
+- [ ] The app sometimes runs into a 403 error which seems to be caused by rate limiting done by the backend.

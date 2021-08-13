@@ -8,7 +8,7 @@
 import Foundation
 @testable import NasaImage
 
-class NetworkingServiceMock: NetworkingService {
+class NetworkServiceMock: NetworkService {
     private(set) var urlString: String?
     private(set) var cancelled = false
     private let response: Data?

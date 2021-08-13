@@ -10,11 +10,11 @@ import Foundation
 typealias CancellationToken = (() -> Void)
 typealias DataCompletion = ((Data?, Error?) -> Void)
 
-protocol NetworkingService {
+protocol NetworkService {
     func get(urlString: String, completion: @escaping DataCompletion) -> CancellationToken
 }
 
-class NetworkingServiceImpl: NetworkingService {
+class NetworkServiceImpl: NetworkService {
     var session: URLSession = URLSession.shared
     var reachability: ReachabilityService = ReachabilityServiceImpl()
     

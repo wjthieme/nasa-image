@@ -11,7 +11,7 @@ import XCTest
 class ApiServiceTests: XCTestCase {
     
     func testSearchUrl() {
-        let mockNetwork = NetworkingServiceMock()
+        let mockNetwork = NetworkServiceMock()
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.search("Apollo/ \\!@#$%^&", page: 1, completion: { _ in })
@@ -19,7 +19,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testSearchParse() {
-        let mockNetwork = NetworkingServiceMock(response: Util.validSearch)
+        let mockNetwork = NetworkServiceMock(response: Util.validSearch)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.search("", page: 1) { result in
@@ -28,7 +28,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testSearchParseFail() {
-        let mockNetwork = NetworkingServiceMock(response: Util.invalidSearch)
+        let mockNetwork = NetworkServiceMock(response: Util.invalidSearch)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.search("", page: 1) { result in
@@ -37,7 +37,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testSearchError() {
-        let mockNetwork = NetworkingServiceMock(error: Util.testError)
+        let mockNetwork = NetworkServiceMock(error: Util.testError)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.search("", page: 1) { result in
@@ -46,7 +46,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testSearchErrorWithValidData() {
-        let mockNetwork = NetworkingServiceMock(response: Util.validSearch, error: Util.testError)
+        let mockNetwork = NetworkServiceMock(response: Util.validSearch, error: Util.testError)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.search("", page: 1) { result in
@@ -55,7 +55,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testSearchEmpty() {
-        let mockNetwork = NetworkingServiceMock()
+        let mockNetwork = NetworkServiceMock()
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.search("", page: 1) { result in
@@ -64,7 +64,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testSearchCancel() {
-        let mockNetwork = NetworkingServiceMock(shouldComplete: false)
+        let mockNetwork = NetworkServiceMock(shouldComplete: false)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         let cancelRequest = apiService.search("", page: 1, completion: { _ in })
@@ -73,7 +73,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageUrl() {
-        let mockNetwork = NetworkingServiceMock()
+        let mockNetwork = NetworkServiceMock()
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("Apollo/ \\!@#$%^&", size: .medium, completion: { _ in })
@@ -81,7 +81,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageParse() {
-        let mockNetwork = NetworkingServiceMock(response: Util.validImage)
+        let mockNetwork = NetworkServiceMock(response: Util.validImage)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("", size: .medium) { result in
@@ -90,7 +90,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageParseFail() {
-        let mockNetwork = NetworkingServiceMock(response: Util.invalidSearch)
+        let mockNetwork = NetworkServiceMock(response: Util.invalidSearch)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("", size: .medium) { result in
@@ -99,7 +99,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageError() {
-        let mockNetwork = NetworkingServiceMock(error: Util.testError)
+        let mockNetwork = NetworkServiceMock(error: Util.testError)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("", size: .medium) { result in
@@ -108,7 +108,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageErrorWithValidData() {
-        let mockNetwork = NetworkingServiceMock(response: Util.validSearch, error: Util.testError)
+        let mockNetwork = NetworkServiceMock(response: Util.validSearch, error: Util.testError)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("", size: .medium) { result in
@@ -117,7 +117,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageEmpty() {
-        let mockNetwork = NetworkingServiceMock()
+        let mockNetwork = NetworkServiceMock()
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("", size: .medium) { result in
@@ -126,7 +126,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageCancel() {
-        let mockNetwork = NetworkingServiceMock(shouldComplete: false)
+        let mockNetwork = NetworkServiceMock(shouldComplete: false)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         let cancelRequest = apiService.getImage("", size: .medium, completion: { _ in })

@@ -16,7 +16,7 @@ protocol ApiService {
 }
 
 class ApiServiceImpl: ApiService {
-    var networkService: NetworkingService = NetworkingServiceImpl()
+    var networkService: NetworkService = NetworkServiceImpl()
 
     
     func search(_ query: String, page: Int, completion: @escaping SearchCallback) -> CancellationToken {

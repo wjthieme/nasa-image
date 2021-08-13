@@ -24,11 +24,21 @@
 		EDC349D126C5B1B700A19091 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EDC349D326C5B1B700A19091 /* Localizable.strings */; };
 		EDC349D726C5B81400A19091 /* ImageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349D626C5B81400A19091 /* ImageType.swift */; };
 		EDC349D926C5B97A00A19091 /* NetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349D826C5B97A00A19091 /* NetworkingService.swift */; };
-		EDC349DB26C5BB0100A19091 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349DA26C5BB0100A19091 /* Reachability.swift */; };
+		EDC349DB26C5BB0100A19091 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349DA26C5BB0100A19091 /* ReachabilityService.swift */; };
 		EDC349DD26C5BBE200A19091 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349DC26C5BBE200A19091 /* NetworkingError.swift */; };
-		EDC349E126C5C42500A19091 /* LoaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E026C5C42500A19091 /* LoaderButton.swift */; };
+		EDC349E126C5C42500A19091 /* LoaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E026C5C42500A19091 /* LoaderCell.swift */; };
 		EDC349E326C5C94000A19091 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E226C5C94000A19091 /* ImageCell.swift */; };
 		EDC349E526C5D18600A19091 /* ApiServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E426C5D18600A19091 /* ApiServiceTests.swift */; };
+		EDC349E726C653EA00A19091 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349E626C653EA00A19091 /* NetworkServiceTests.swift */; };
+		EDC349EA26C6591600A19091 /* search_valid.json in Resources */ = {isa = PBXBuildFile; fileRef = EDC349E926C6591600A19091 /* search_valid.json */; };
+		EDC349EC26C6592900A19091 /* search_invalid.json in Resources */ = {isa = PBXBuildFile; fileRef = EDC349EB26C6592900A19091 /* search_invalid.json */; };
+		EDC349EE26C65BA600A19091 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349ED26C65BA600A19091 /* Result.swift */; };
+		EDC349F026C65C4400A19091 /* test_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDC349EF26C65C4400A19091 /* test_image.jpg */; };
+		EDC349F226C660B400A19091 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F126C660B400A19091 /* Util.swift */; };
+		EDC349F426C662D600A19091 /* OverviewViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F326C662D600A19091 /* OverviewViewModelTests.swift */; };
+		EDC349F626C662F300A19091 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F526C662F300A19091 /* DetailViewModelTests.swift */; };
+		EDC349F826C6633B00A19091 /* OverviewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F726C6633B00A19091 /* OverviewControllerTests.swift */; };
+		EDC349FA26C6635500A19091 /* DetailControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349F926C6635500A19091 /* DetailControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,11 +74,21 @@
 		EDC349D226C5B1B700A19091 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EDC349D626C5B81400A19091 /* ImageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageType.swift; sourceTree = "<group>"; };
 		EDC349D826C5B97A00A19091 /* NetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingService.swift; sourceTree = "<group>"; };
-		EDC349DA26C5BB0100A19091 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		EDC349DA26C5BB0100A19091 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 		EDC349DC26C5BBE200A19091 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
-		EDC349E026C5C42500A19091 /* LoaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderButton.swift; sourceTree = "<group>"; };
+		EDC349E026C5C42500A19091 /* LoaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderCell.swift; sourceTree = "<group>"; };
 		EDC349E226C5C94000A19091 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		EDC349E426C5D18600A19091 /* ApiServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceTests.swift; sourceTree = "<group>"; };
+		EDC349E626C653EA00A19091 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		EDC349E926C6591600A19091 /* search_valid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_valid.json; sourceTree = "<group>"; };
+		EDC349EB26C6592900A19091 /* search_invalid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_invalid.json; sourceTree = "<group>"; };
+		EDC349ED26C65BA600A19091 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		EDC349EF26C65C4400A19091 /* test_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_image.jpg; sourceTree = "<group>"; };
+		EDC349F126C660B400A19091 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		EDC349F326C662D600A19091 /* OverviewViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewModelTests.swift; sourceTree = "<group>"; };
+		EDC349F526C662F300A19091 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		EDC349F726C6633B00A19091 /* OverviewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewControllerTests.swift; sourceTree = "<group>"; };
+		EDC349F926C6635500A19091 /* DetailControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +145,15 @@
 		EDC349A426C58A3300A19091 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EDC349E826C658DB00A19091 /* Resources */,
+				EDC349F126C660B400A19091 /* Util.swift */,
 				EDC349C526C5903700A19091 /* CoordinatorTests.swift */,
 				EDC349E426C5D18600A19091 /* ApiServiceTests.swift */,
+				EDC349E626C653EA00A19091 /* NetworkServiceTests.swift */,
+				EDC349F326C662D600A19091 /* OverviewViewModelTests.swift */,
+				EDC349F526C662F300A19091 /* DetailViewModelTests.swift */,
+				EDC349F726C6633B00A19091 /* OverviewControllerTests.swift */,
+				EDC349F926C6635500A19091 /* DetailControllerTests.swift */,
 				EDC349A726C58A3300A19091 /* Info.plist */,
 			);
 			path = Tests;
@@ -146,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				EDC349E226C5C94000A19091 /* ImageCell.swift */,
-				EDC349E026C5C42500A19091 /* LoaderButton.swift */,
+				EDC349E026C5C42500A19091 /* LoaderCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +201,7 @@
 		EDC349B226C58ADB00A19091 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EDC349DA26C5BB0100A19091 /* ReachabilityService.swift */,
 				EDC349D826C5B97A00A19091 /* NetworkingService.swift */,
 				EDC349B526C58B5400A19091 /* ApiService.swift */,
 				EDC349BD26C58C3600A19091 /* ViewCoordinator.swift */,
@@ -184,8 +212,8 @@
 		EDC349B326C58AE000A19091 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				EDC349DA26C5BB0100A19091 /* Reachability.swift */,
 				EDC349DC26C5BBE200A19091 /* NetworkingError.swift */,
+				EDC349ED26C65BA600A19091 /* Result.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -198,6 +226,16 @@
 				EDC3499626C58A1400A19091 /* LaunchScreen.storyboard */,
 				EDC3499926C58A1400A19091 /* Info.plist */,
 				EDC349D326C5B1B700A19091 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EDC349E826C658DB00A19091 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDC349E926C6591600A19091 /* search_valid.json */,
+				EDC349EB26C6592900A19091 /* search_invalid.json */,
+				EDC349EF26C65C4400A19091 /* test_image.jpg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -292,6 +330,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC349EA26C6591600A19091 /* search_valid.json in Resources */,
+				EDC349EC26C6592900A19091 /* search_invalid.json in Resources */,
+				EDC349F026C65C4400A19091 /* test_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,16 +343,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC349EE26C65BA600A19091 /* Result.swift in Sources */,
 				EDC3499026C58A1300A19091 /* OverviewController.swift in Sources */,
 				EDC349C826C5947900A19091 /* BaseViewModel.swift in Sources */,
 				EDC349DD26C5BBE200A19091 /* NetworkingError.swift in Sources */,
-				EDC349E126C5C42500A19091 /* LoaderButton.swift in Sources */,
+				EDC349E126C5C42500A19091 /* LoaderCell.swift in Sources */,
 				EDC349CA26C597A800A19091 /* NasaAsset.swift in Sources */,
 				EDC349C226C58DFF00A19091 /* NavigationController.swift in Sources */,
 				EDC349CE26C5990800A19091 /* NasaSearch.swift in Sources */,
 				EDC349D926C5B97A00A19091 /* NetworkingService.swift in Sources */,
 				EDC349BC26C58B7000A19091 /* DetailViewModel.swift in Sources */,
-				EDC349DB26C5BB0100A19091 /* Reachability.swift in Sources */,
+				EDC349DB26C5BB0100A19091 /* ReachabilityService.swift in Sources */,
 				EDC349E326C5C94000A19091 /* ImageCell.swift in Sources */,
 				EDC349B826C58B5D00A19091 /* OverviewViewModel.swift in Sources */,
 				EDC3498C26C58A1300A19091 /* AppDelegate.swift in Sources */,
@@ -326,8 +368,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDC349FA26C6635500A19091 /* DetailControllerTests.swift in Sources */,
 				EDC349C626C5903700A19091 /* CoordinatorTests.swift in Sources */,
+				EDC349F426C662D600A19091 /* OverviewViewModelTests.swift in Sources */,
+				EDC349E726C653EA00A19091 /* NetworkServiceTests.swift in Sources */,
 				EDC349E526C5D18600A19091 /* ApiServiceTests.swift in Sources */,
+				EDC349F826C6633B00A19091 /* OverviewControllerTests.swift in Sources */,
+				EDC349F226C660B400A19091 /* Util.swift in Sources */,
+				EDC349F626C662F300A19091 /* DetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

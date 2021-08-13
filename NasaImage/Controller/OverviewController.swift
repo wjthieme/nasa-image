@@ -77,7 +77,7 @@ class OverviewController: UIViewController {
         collectionView.dataSource = self
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(ImageCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
-        collectionView.register(LoaderButton.self, forSupplementaryViewOfKind: endReuseIdentifier, withReuseIdentifier: endReuseIdentifier)
+        collectionView.register(LoaderCell.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: endReuseIdentifier)
         
         view.addSubview(collectionView)
         
@@ -90,7 +90,8 @@ class OverviewController: UIViewController {
     func configureCollectionViewLayout() {
         collectionViewLayout.minimumInteritemSpacing = 0
         collectionViewLayout.minimumLineSpacing = 0
-        collectionViewLayout.itemSize = CGSize(width: view.bounds.width / 3, height: view.bounds.width / 3)
+        let dim = view.bounds.width / CGFloat(viewModel.itemsPerRow())
+        collectionViewLayout.itemSize = CGSize(width: dim, height: dim)
     }
     
     
@@ -120,7 +121,7 @@ class OverviewController: UIViewController {
 
 }
 
-extension OverviewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension OverviewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
     }
@@ -137,15 +138,35 @@ extension OverviewController: UICollectionViewDelegate, UICollectionViewDataSour
         viewModel.didPressItem(indexPath.row)
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        let cell = collectionView.deque
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: endReuseIdentifier, for: indexPath)
+        cell.isHidden = !viewModel.shouldShowFooter()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        if viewModel.shouldShowFooter() {
+            let query = (searchBar.text?.isEmpty ?? true) ? searchBar.placeholder : searchBar.text
+            viewModel.startUpdating(query ?? "", fresh: false)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: viewModel.shouldShowFooter() ? 100 : 0)
+    }
     
 }
 
 extension OverviewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.startUpdating(searchText, page: 1)
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let query = (searchBar.text?.isEmpty ?? true) ? searchBar.placeholder : searchBar.text
+        viewModel.startUpdating(query ?? "", fresh: true)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        let query = (searchBar.text?.isEmpty ?? true) ? searchBar.placeholder : searchBar.text
+        viewModel.startUpdating(query ?? "", fresh: true)
     }
 }
 
@@ -153,7 +174,7 @@ extension OverviewController {
     @objc func refresh(refreshControl: UIRefreshControl) {
         refreshControl.beginRefreshing()
         let query = (searchBar.text?.isEmpty ?? true) ? searchBar.placeholder : searchBar.text
-        viewModel.startUpdating(query ?? "", page: 1)
+        viewModel.startUpdating(query ?? "", fresh: true)
     }
 }
 

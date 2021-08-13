@@ -11,7 +11,7 @@ import XCTest
 class CoordinatorTests: XCTestCase {
     
     func testCoordinatorInitialState() {
-        let mockNavigation = MockNavigation()
+        let mockNavigation = NavigationControllerMock()
         let coordinator = ViewCoordinatorImpl()
         coordinator.navigationController = mockNavigation
         XCTAssertFalse(mockNavigation.controller is OverviewController)
@@ -19,24 +19,24 @@ class CoordinatorTests: XCTestCase {
     }
     
     func testCoordinatorOverview() {
-        let mockNavigation = MockNavigation()
+        let mockNavigation = NavigationControllerMock()
         let coordinator = ViewCoordinatorImpl()
         coordinator.navigationController = mockNavigation
         coordinator.overview()
-        XCTAssert(mockNavigation.controller is OverviewController)
+        XCTAssertTrue(mockNavigation.controller is OverviewController)
     }
     
     func testCoordinatorDetail() {
-        let mockNavigation = MockNavigation()
+        let mockNavigation = NavigationControllerMock()
         let coordinator = ViewCoordinatorImpl()
         coordinator.navigationController = mockNavigation
         coordinator.detail(nil)
-        XCTAssert(mockNavigation.controller is DetailController)
+        XCTAssertTrue(mockNavigation.controller is DetailController)
     }
     
 }
 
-class MockNavigation: NavigationController {
+class NavigationControllerMock: NavigationController {
     var controller: UIViewController?
     func navigate(to controller: UIViewController, animated: Bool) {
         self.controller = controller

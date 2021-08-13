@@ -7,7 +7,9 @@
 
 import Foundation
 
-class NasaAsset: Codable {
+class NasaAsset: Codable, Equatable {
+    static func == (lhs: NasaAsset, rhs: NasaAsset) -> Bool { lhs.id == rhs.id }
+    
     let id: String
     let title: String?
     let description: String?

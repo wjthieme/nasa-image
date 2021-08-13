@@ -15,10 +15,11 @@ protocol NetworkingService {
 }
 
 class NetworkingServiceImpl: NetworkingService {
-    
+    var session: URLSession = URLSession.shared
+    var reachability: ReachabilityService = ReachabilityServiceImpl()
     
     func get(urlString: String, completion: @escaping DataCompletion) -> CancellationToken {
-        guard Reachability.isConnectedToNetwork else {
+        guard reachability.isConnectedToNetwork else {
             completion(nil, NetworkingError.notConnectedToNetwork)
             return { }
         }
@@ -37,7 +38,7 @@ class NetworkingServiceImpl: NetworkingService {
                 guard let data = data else { throw NetworkingError.emptyBody(request) }
                 DispatchQueue.main.async { completion(data, nil) }
             } catch {
-                DispatchQueue.main.async { completion(nil, error) }
+                DispatchQueue.main.async { completion(nil, error as NSError) }
             }
         }
         task.resume()

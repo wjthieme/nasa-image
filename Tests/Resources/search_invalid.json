@@ -1,0 +1,49 @@
+{
+   "collection":{
+      "version":"1.0",
+      "items":[
+         {
+            "href":"https://images-assets.nasa.gov/image/NHQ201907180120/collection.json",
+            "links":[
+               {
+                  "href":"https://images-assets.nasa.gov/image/NHQ201907180120/NHQ201907180120~thumb.jpg",
+                  "rel":"preview",
+                  "render":"image"
+               }
+            ],
+            "data":[
+               {
+                  "title":"Apollo 11 50th Anniversary Celebration",
+                  "album":[
+                     "201907_Apollo_50th_in_DC"
+                  ],
+                  "photographer":"NASA/Connie Moore",
+                  "keywords":[
+                     "Apollo 11",
+                     "Apollo 11 50th Anniversary",
+                     "DC",
+                     "National Mall",
+                     "Washington"
+                  ],
+                  "description":"The Moon to Mars exhibit is seen at the Apollo 11 50th Anniversary celebration on the National Mall, Thursday, July 18, 2019 in Washington. Apollo 11 was the first mission to land astronauts on the Moon and launched on July 16, 1969 with astronauts Neil Armstrong, Michael Collins, and Buzz Aldrin. Photo Credit: (NASA/Connie Moore)",
+                  "media_type":"image",
+                  "date_created":"2019-07-18T00:00:00Z",
+                  "location":"National Mall",
+                  "center":"HQ"
+               }
+            ]
+         }
+      ],
+      "href":"http://images-api.nasa.gov/search?q=apollo%2011&description=moon%20landing&media_type=image",
+      "metadata":{
+         "total_hits": 1
+      },
+      "links":[
+         {
+            "href":"http://images-api.nasa.gov/search?q=apollo+11&media_type=image&page=2&description=moon+landing",
+            "rel":"next",
+            "prompt":"Next"
+         }
+      ]
+   }
+}

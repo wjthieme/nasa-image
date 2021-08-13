@@ -30,7 +30,7 @@ class NetworkingServiceImpl: NetworkingService {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = session.dataTask(with: request) { data, response, error in
             do {
                 if let error = error { throw error }
                 guard let response = response as? HTTPURLResponse else { throw NetworkingError.emptyResponse(request) }

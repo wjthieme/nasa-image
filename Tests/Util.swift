@@ -5,7 +5,7 @@
 //  Created by Wilhelm Thieme on 13/08/2021.
 //
 
-import UIKit
+import XCTest
 @testable import NasaImage
 
 class Util {
@@ -44,16 +44,9 @@ class Util {
     }()
     
     
-    static func takeScreenshot(of controller: UIViewController) -> UIImage {
-        let window = UIApplication.shared.windows.first!
-        window.rootViewController = controller
-        let scale = UIScreen.main.scale
-        UIGraphicsBeginImageContextWithOptions(window.layer.frame.size, false, scale);
-       let context = UIGraphicsGetCurrentContext()!
-        window.layer.render(in: context)
-        let image = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return image
-     }
+    
     
 }
+
+
+

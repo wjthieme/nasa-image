@@ -20,8 +20,8 @@ protocol OverviewViewModel: AnyObject {
 
 class OverviewViewModelImpl: BaseViewModel, OverviewViewModel {
     private var cancelUpdate: CancellationToken?
-    var images: [NasaAsset] = []
-    var thumbs: [String: UIImage] = [:]
+    private var images: [NasaAsset] = []
+    private var thumbs: [String: UIImage] = [:]
     
     private var currentPage = 0
     private var totalImages = 0
@@ -63,7 +63,7 @@ class OverviewViewModelImpl: BaseViewModel, OverviewViewModel {
         }
     }
     
-    func startDownloadingThumbs() {
+    private func startDownloadingThumbs() {
         for (offset, asset) in images.enumerated() {
             if let image = thumbs[asset.id], image != UIImage(named: "DefaultImage") {
                 continue
@@ -85,11 +85,10 @@ class OverviewViewModelImpl: BaseViewModel, OverviewViewModel {
     }
     
     func itemsPerRow() -> Int {
-        let isLandscape = UIApplication.shared.windows.first?.windowScene?.interfaceOrientation.isLandscape ?? false
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone: return isLandscape ? 5 : 3
-        case .pad, .mac: return 5
-        default: return 3
+        if deviceService.isBigScreen || deviceService.isLandscape {
+            return 5
+        } else {
+            return 3
         }
     }
 

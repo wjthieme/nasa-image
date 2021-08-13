@@ -47,6 +47,9 @@
 		EDC34A0B26C6A0F800A19091 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A0A26C6A0F800A19091 /* DetailViewModel.swift */; };
 		EDC34A0D26C6A33F00A19091 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A0C26C6A33F00A19091 /* ViewCoordinator.swift */; };
 		EDC34A0F26C6A4F800A19091 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A0E26C6A4F800A19091 /* ReachabilityService.swift */; };
+		EDC34A1126C6ABC100A19091 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A1026C6ABC100A19091 /* Extension.swift */; };
+		EDC34A1326C6B27600A19091 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A1226C6B27600A19091 /* DeviceService.swift */; };
+		EDC34A1526C6B31D00A19091 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC34A1426C6B31D00A19091 /* DeviceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +108,9 @@
 		EDC34A0A26C6A0F800A19091 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		EDC34A0C26C6A33F00A19091 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		EDC34A0E26C6A4F800A19091 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		EDC34A1026C6ABC100A19091 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		EDC34A1226C6B27600A19091 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
+		EDC34A1426C6B31D00A19091 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 				EDC349FF26C6A06900A19091 /* Mock */,
 				EDC349E826C658DB00A19091 /* Resources */,
 				EDC349F126C660B400A19091 /* Util.swift */,
+				EDC34A1026C6ABC100A19091 /* Extension.swift */,
 				EDC349C526C5903700A19091 /* ViewCoordinatorTests.swift */,
 				EDC349E426C5D18600A19091 /* ApiServiceTests.swift */,
 				EDC349E626C653EA00A19091 /* NetworkServiceTests.swift */,
@@ -218,6 +225,7 @@
 		EDC349B226C58ADB00A19091 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EDC34A1226C6B27600A19091 /* DeviceService.swift */,
 				EDC349DA26C5BB0100A19091 /* ReachabilityService.swift */,
 				EDC349D826C5B97A00A19091 /* NetworkService.swift */,
 				EDC349B526C58B5400A19091 /* ApiService.swift */,
@@ -268,6 +276,7 @@
 				EDC34A0A26C6A0F800A19091 /* DetailViewModel.swift */,
 				EDC34A0C26C6A33F00A19091 /* ViewCoordinator.swift */,
 				EDC34A0E26C6A4F800A19091 /* ReachabilityService.swift */,
+				EDC34A1426C6B31D00A19091 /* DeviceService.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -388,6 +397,7 @@
 				EDC349DB26C5BB0100A19091 /* ReachabilityService.swift in Sources */,
 				EDC349E326C5C94000A19091 /* ImageCell.swift in Sources */,
 				EDC349B826C58B5D00A19091 /* OverviewViewModel.swift in Sources */,
+				EDC34A1326C6B27600A19091 /* DeviceService.swift in Sources */,
 				EDC3498C26C58A1300A19091 /* AppDelegate.swift in Sources */,
 				EDC349BA26C58B6800A19091 /* DetailController.swift in Sources */,
 				EDC349D726C5B81400A19091 /* ImageType.swift in Sources */,
@@ -410,12 +420,14 @@
 				EDC349E526C5D18600A19091 /* ApiServiceTests.swift in Sources */,
 				EDC34A0126C6A07F00A19091 /* ApiService.swift in Sources */,
 				EDC349F826C6633B00A19091 /* OverviewControllerTests.swift in Sources */,
+				EDC34A1126C6ABC100A19091 /* Extension.swift in Sources */,
 				EDC34A0326C6A09F00A19091 /* NavigationController.swift in Sources */,
 				EDC34A0B26C6A0F800A19091 /* DetailViewModel.swift in Sources */,
 				EDC34A0526C6A0B400A19091 /* NetworkService.swift in Sources */,
 				EDC34A0726C6A0CC00A19091 /* URLProtocol.swift in Sources */,
 				EDC349F226C660B400A19091 /* Util.swift in Sources */,
 				EDC349F626C662F300A19091 /* DetailViewModelTests.swift in Sources */,
+				EDC34A1526C6B31D00A19091 /* DeviceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

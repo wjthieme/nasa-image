@@ -12,9 +12,8 @@
 * An asset always has thumb image and large image and always follow the url pattern "https://images-assets.nasa.gov/image/{nasa_id}/{nasa_id}~{size}.jpg"
 * Title, description, location & photographer are optional fields
 
-# TODO
+# Known issues
 
-- [ ] Images are not cleared from memory so endless scrolling results in infinite memory expansion
+- [ ] Endless scrolling results in infinite memory expansion as images are kept in memory and only cleared if the search query is changed
 - [ ] Snapshot testing should run on multiple devices and actually compare screenshots
 - [ ] Sometimes runs into 403 error which seems to be a rate limit by the backend
-- [ ] ViewModel Unit Tests

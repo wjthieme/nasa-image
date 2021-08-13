@@ -13,9 +13,6 @@ class DetailControllerTests: XCTestCase {
     func testSnapshot() {
         let controller = DetailController()
         controller.viewModel = DetailViewModelMock()
-        let snapshot = Util.takeScreenshot(of: controller)
-        let attachment = XCTAttachment(image: snapshot)
-        attachment.lifetime = .keepAlways
-        add(attachment)
+        addSnapshot(of: controller)
     }
 }

@@ -17,7 +17,6 @@ protocol ApiService {
 
 class ApiServiceImpl: ApiService {
     var networkService: NetworkService = NetworkServiceImpl()
-
     
     func search(_ query: String, page: Int, completion: @escaping SearchCallback) -> CancellationToken {
         let encodedQuery = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? ""

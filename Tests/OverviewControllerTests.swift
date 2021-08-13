@@ -13,10 +13,15 @@ class OverviewControllerTests: XCTestCase {
     func testSnapshot() {
         let controller = OverviewController()
         controller.viewModel = OverviewViewModelMock()
-        let snapshot = Util.takeScreenshot(of: controller)
-        let attachment = XCTAttachment(image: snapshot)
-        attachment.lifetime = .keepAlways
-        add(attachment)
+        addSnapshot(of: controller)
+    }
+    
+    func testSnapshotFailure() {
+        let viewModel = OverviewViewModelMock()
+        viewModel.updateSuccessful = false
+        let controller = OverviewController()
+        controller.viewModel = viewModel
+        addSnapshot(of: controller)
     }
 }
 

@@ -10,4 +10,5 @@ import UIKit
 class BaseViewModel: NSObject {
     var coordinatior: ViewCoordinator = ViewCoordinatorImpl()
     var apiService: ApiService = ApiServiceImpl()
+    var deviceService: DeviceService = DeviceServiceImpl()
 }

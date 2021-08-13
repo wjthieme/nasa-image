@@ -94,7 +94,7 @@ class ApiServiceTests: XCTestCase {
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("", size: .medium) { result in
-            XCTAssertTrue(result.isSuccess)
+            XCTAssertFalse(result.isSuccess)
         }
     }
     

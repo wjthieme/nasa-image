@@ -8,7 +8,6 @@
 import UIKit
 
 protocol ViewCoordinator: AnyObject {
-    var navigationController: NavigationController { get set }
     func overview()
     func detail(_ image: NasaAsset?)
     func back()

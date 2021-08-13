@@ -10,7 +10,6 @@ import XCTest
 
 class DetailControllerTests: XCTestCase {
     
-    
     func testSnapshot() {
         let controller = DetailController()
         controller.viewModel = DetailViewModelMock()
@@ -19,14 +18,4 @@ class DetailControllerTests: XCTestCase {
         attachment.lifetime = .keepAlways
         add(attachment)
     }
-}
-
-class DetailViewModelMock: DetailViewModel {
-    var didLoadImage: (() -> Void)?
-    func backButtonPressed() { }
-    func startLoadImage() { }
-    var image: UIImage? { return UIImage(data: Util.testImage) }
-    var title: String { return "TestTitle" }
-    var explanation: String { return "TestExplanation" }
-    var information: String { return "TestInformation" }
 }

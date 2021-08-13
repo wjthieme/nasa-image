@@ -6,6 +6,7 @@
 //
 
 import UIKit
+@testable import NasaImage
 
 class Util {
     
@@ -25,9 +26,21 @@ class Util {
         return try! Data(contentsOf: url)
     }()
     
-    static let testImage: Data = {
+    static let validImage: Data = {
         let url = testBundle.url(forResource: "test_image", withExtension: "jpg")!
         return try! Data(contentsOf: url)
+    }()
+    
+    static let testImage: UIImage = {
+        return UIImage(data: validImage)!
+    }()
+    
+    static let testSearch: NasaSearch = {
+        return try! JSONDecoder().decode(NasaSearch.self, from: validSearch)
+    }()
+    
+    static let testAsset: NasaAsset = {
+        return testSearch.collection.items.first!.data.first!
     }()
     
     

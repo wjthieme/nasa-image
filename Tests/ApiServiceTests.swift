@@ -81,7 +81,7 @@ class ApiServiceTests: XCTestCase {
     }
     
     func testGetImageParse() {
-        let mockNetwork = NetworkingServiceMock(response: Util.testImage)
+        let mockNetwork = NetworkingServiceMock(response: Util.validImage)
         let apiService = ApiServiceImpl()
         apiService.networkService = mockNetwork
         _ = apiService.getImage("", size: .medium) { result in
@@ -134,29 +134,4 @@ class ApiServiceTests: XCTestCase {
         XCTAssertTrue(mockNetwork.cancelled)
     }
     
-}
-
-class NetworkingServiceMock: NetworkingService {
-    private(set) var urlString: String?
-    private(set) var cancelled = false
-    private let response: Data?
-    private let error: NSError?
-    private let shouldComplete: Bool
-    
-    init(response: Data? = nil, error: NSError? = nil, shouldComplete: Bool = true) {
-        self.response = response
-        self.error = error
-        self.shouldComplete = shouldComplete
-    }
-    
-    func get(urlString: String, completion: @escaping DataCompletion) -> CancellationToken {
-        self.urlString = urlString
-        self.cancelled = false
-        
-        if shouldComplete {
-            completion(response, error)
-        }
-        
-        return { self.cancelled = true }
-    }
 }

@@ -44,14 +44,3 @@ class ViewCoordinatorTests: XCTestCase {
     }
     
 }
-
-class NavigationControllerMock: NavigationController {
-    var controllers: [UIViewController] = []
-    var currentController: UIViewController? { return controllers.last }
-    func navigate(to controller: UIViewController, animated: Bool) {
-        self.controllers.append(controller)
-    }
-    func pop(animated: Bool) {
-        self.controllers.removeLast()
-    }
-}

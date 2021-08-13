@@ -43,10 +43,4 @@ class Util {
         return testSearch.collection.items.first!.data.first!
     }()
     
-    
-    
-    
 }
-
-
-

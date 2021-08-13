@@ -30,13 +30,13 @@ class OverviewViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.shouldShowFooter())
         
         viewModel.startUpdating("", fresh: false)
-        XCTAssertEqual(calledBack, 4)
+        XCTAssertEqual(calledBack, 3)
         XCTAssertEqual(viewModel.numberOfItems(), 2)
         XCTAssertEqual(viewModel.image(1), Util.testImage)
         XCTAssertFalse(viewModel.shouldShowFooter())
         
         viewModel.startUpdating("", fresh: true)
-        XCTAssertEqual(calledBack, 6)
+        XCTAssertEqual(calledBack, 4)
         XCTAssertEqual(viewModel.numberOfItems(), 1)
         XCTAssertEqual(viewModel.image(0), Util.testImage)
         XCTAssertTrue(viewModel.shouldShowFooter())
@@ -55,10 +55,12 @@ class OverviewViewModelTests: XCTestCase {
         viewModel.updateError = { _ in
             calledBack -= 1
         }
+        
+        viewModel.startUpdating("", fresh: true)
         XCTAssertEqual(calledBack, -1)
         XCTAssertEqual(viewModel.numberOfItems(), 0)
         XCTAssertEqual(viewModel.image(0), nil)
-        XCTAssertTrue(viewModel.shouldShowFooter())
+        XCTAssertFalse(viewModel.shouldShowFooter())
     }
     
     func testFieldsFailedImage() {
@@ -74,6 +76,7 @@ class OverviewViewModelTests: XCTestCase {
         viewModel.updateError = { _ in
             calledBack -= 1
         }
+        viewModel.startUpdating("", fresh: true)
         XCTAssertEqual(calledBack, 2)
         XCTAssertEqual(viewModel.numberOfItems(), 1)
         XCTAssertEqual(viewModel.image(0), UIImage(named: "DefaultImage"))

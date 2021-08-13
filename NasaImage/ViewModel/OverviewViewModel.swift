@@ -38,6 +38,7 @@ class OverviewViewModelImpl: BaseViewModel, OverviewViewModel {
     }
 
     func image(_ index: Int) -> UIImage? {
+        if index < 0 || index >= images.count { return nil }
         return thumbs[images[index].id]
     }
     

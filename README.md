@@ -15,5 +15,5 @@
 # Known issues
 
 - [ ] Endless scrolling results in infinite memory expansion as images are kept in memory and only cleared if the search query is changed
-- [ ] Snapshot testing should run on multiple devices and actually compare screenshots
-- [ ] Sometimes runs into 403 error which seems to be a rate limit by the backend
+- [ ] Snapshot testing should run on multiple devices and actually compare screenshots between different runs
+- [ ] Sometimes runs into 403 error which seems to be caused by rate limiting done by the backend

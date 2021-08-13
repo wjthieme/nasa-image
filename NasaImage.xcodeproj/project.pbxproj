@@ -17,7 +17,7 @@
 		EDC349BC26C58B7000A19091 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349BB26C58B7000A19091 /* DetailViewModel.swift */; };
 		EDC349BE26C58C3600A19091 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349BD26C58C3600A19091 /* ViewCoordinator.swift */; };
 		EDC349C226C58DFF00A19091 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C126C58DFF00A19091 /* NavigationController.swift */; };
-		EDC349C626C5903700A19091 /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C526C5903700A19091 /* CoordinatorTests.swift */; };
+		EDC349C626C5903700A19091 /* ViewCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C526C5903700A19091 /* ViewCoordinatorTests.swift */; };
 		EDC349C826C5947900A19091 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C726C5947900A19091 /* BaseViewModel.swift */; };
 		EDC349CA26C597A800A19091 /* NasaAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349C926C597A800A19091 /* NasaAsset.swift */; };
 		EDC349CE26C5990800A19091 /* NasaSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC349CD26C5990800A19091 /* NasaSearch.swift */; };
@@ -67,7 +67,7 @@
 		EDC349BB26C58B7000A19091 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		EDC349BD26C58C3600A19091 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		EDC349C126C58DFF00A19091 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		EDC349C526C5903700A19091 /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		EDC349C526C5903700A19091 /* ViewCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinatorTests.swift; sourceTree = "<group>"; };
 		EDC349C726C5947900A19091 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		EDC349C926C597A800A19091 /* NasaAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAsset.swift; sourceTree = "<group>"; };
 		EDC349CD26C5990800A19091 /* NasaSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaSearch.swift; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 			children = (
 				EDC349E826C658DB00A19091 /* Resources */,
 				EDC349F126C660B400A19091 /* Util.swift */,
-				EDC349C526C5903700A19091 /* CoordinatorTests.swift */,
+				EDC349C526C5903700A19091 /* ViewCoordinatorTests.swift */,
 				EDC349E426C5D18600A19091 /* ApiServiceTests.swift */,
 				EDC349E626C653EA00A19091 /* NetworkServiceTests.swift */,
 				EDC349F326C662D600A19091 /* OverviewViewModelTests.swift */,
@@ -369,7 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDC349FA26C6635500A19091 /* DetailControllerTests.swift in Sources */,
-				EDC349C626C5903700A19091 /* CoordinatorTests.swift in Sources */,
+				EDC349C626C5903700A19091 /* ViewCoordinatorTests.swift in Sources */,
 				EDC349F426C662D600A19091 /* OverviewViewModelTests.swift in Sources */,
 				EDC349E726C653EA00A19091 /* NetworkServiceTests.swift in Sources */,
 				EDC349E526C5D18600A19091 /* ApiServiceTests.swift in Sources */,

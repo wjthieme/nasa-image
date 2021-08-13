@@ -12,11 +12,11 @@ class NasaAsset: Codable, Equatable {
     
     let id: String
     let title: String?
-    let description: String?
+    let explanation: String?
     let photographer: String?
     let location: String?
     
     private enum CodingKeys: String, CodingKey {
-        case id = "nasa_id", title, description, photographer, location
+        case id = "nasa_id", title, explanation = "description", photographer, location
     }
 }

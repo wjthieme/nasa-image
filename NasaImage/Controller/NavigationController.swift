@@ -9,14 +9,19 @@ import UIKit
 
 protocol NavigationController: AnyObject {
     func navigate(to controller: UIViewController, animated: Bool)
+    func pop(animated: Bool)
 }
 
 class NavigationControllerImpl: UIWindow, NavigationController {
     
+    let navigationController = UINavigationController()
+    
     init() {
         super.init(frame: UIScreen.main.bounds)
-        rootViewController = UIViewController()
+        rootViewController = navigationController
         makeKeyAndVisible()
+        
+        navigationController.isNavigationBarHidden = true
     }
     
     required init?(coder: NSCoder) {
@@ -24,11 +29,10 @@ class NavigationControllerImpl: UIWindow, NavigationController {
     }
     
     func navigate(to controller: UIViewController, animated: Bool) {
-        rootViewController = controller
-        guard animated else { return }
-        let animation = CATransition()
-        animation.duration = 0.5
-        animation.type = .fade
-        layer.add(animation, forKey: kCATransition)
+        navigationController.pushViewController(controller, animated: true)
+    }
+    
+    func pop(animated: Bool) {
+        navigationController.popViewController(animated: animated)
     }
 }

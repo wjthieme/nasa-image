@@ -11,7 +11,6 @@ fileprivate let cellReuseIdentifier = "OverviewControllerReuse"
 fileprivate let endReuseIdentifier = "OverviewControllerReuseEnd"
 
 class OverviewController: UIViewController {
-    override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
     
     var viewModel: OverviewViewModel = OverviewViewModelImpl()
 
@@ -38,6 +37,11 @@ class OverviewController: UIViewController {
         refresh(refreshControl: refreshControl)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureCollectionViewLayout()
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { [self] context in
@@ -47,7 +51,7 @@ class OverviewController: UIViewController {
     }
     
     func configureStatusBarView() {
-        statusBarView.backgroundColor = .black
+        statusBarView.backgroundColor = UIColor(named: "AccentColor")
         statusBarView.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(statusBarView)

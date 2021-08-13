@@ -11,6 +11,7 @@ protocol ViewCoordinator: AnyObject {
     var navigationController: NavigationController { get set }
     func overview()
     func detail(_ image: NasaAsset?)
+    func back()
 }
 
 class ViewCoordinatorImpl: ViewCoordinator {
@@ -22,6 +23,10 @@ class ViewCoordinatorImpl: ViewCoordinator {
         let controller = OverviewController()
         controller.viewModel = viewModel
         navigationController.navigate(to: controller, animated: true)
+    }
+    
+    func back() {
+        navigationController.pop(animated: true)
     }
     
     func detail(_ image: NasaAsset?) {

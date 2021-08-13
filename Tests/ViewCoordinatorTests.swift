@@ -8,14 +8,13 @@
 import XCTest
 @testable import NasaImage
 
-class CoordinatorTests: XCTestCase {
+class ViewCoordinatorTests: XCTestCase {
     
     func testCoordinatorInitialState() {
         let mockNavigation = NavigationControllerMock()
         let coordinator = ViewCoordinatorImpl()
         coordinator.navigationController = mockNavigation
-        XCTAssertFalse(mockNavigation.controller is OverviewController)
-        XCTAssertFalse(mockNavigation.controller is DetailController)
+        XCTAssertNil(mockNavigation.currentController)
     }
     
     func testCoordinatorOverview() {
@@ -23,7 +22,7 @@ class CoordinatorTests: XCTestCase {
         let coordinator = ViewCoordinatorImpl()
         coordinator.navigationController = mockNavigation
         coordinator.overview()
-        XCTAssertTrue(mockNavigation.controller is OverviewController)
+        XCTAssertTrue(mockNavigation.currentController is OverviewController)
     }
     
     func testCoordinatorDetail() {
@@ -31,14 +30,28 @@ class CoordinatorTests: XCTestCase {
         let coordinator = ViewCoordinatorImpl()
         coordinator.navigationController = mockNavigation
         coordinator.detail(nil)
-        XCTAssertTrue(mockNavigation.controller is DetailController)
+        XCTAssertTrue(mockNavigation.currentController is DetailController)
+    }
+    
+    func testCoordinatorBack() {
+        let mockNavigation = NavigationControllerMock()
+        let coordinator = ViewCoordinatorImpl()
+        coordinator.navigationController = mockNavigation
+        coordinator.overview()
+        coordinator.detail(nil)
+        coordinator.back()
+        XCTAssertTrue(mockNavigation.currentController is OverviewController)
     }
     
 }
 
 class NavigationControllerMock: NavigationController {
-    var controller: UIViewController?
+    var controllers: [UIViewController] = []
+    var currentController: UIViewController? { return controllers.last }
     func navigate(to controller: UIViewController, animated: Bool) {
-        self.controller = controller
+        self.controllers.append(controller)
+    }
+    func pop(animated: Bool) {
+        self.controllers.removeLast()
     }
 }

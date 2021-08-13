@@ -14,9 +14,9 @@ jobs:
       - name: Git
         uses: actions/checkout@v2
       - name: Setup Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+        run: sudo xcode-select -switch /Applications/Xcode_12.5.app
       - name: Run Unit Tests
-        run: xcodebuild clean test -scheme NasaImage -destination platform=iOS\ Simulator,OS=14.4,name=iPhone\ 11 -derivedDataPath build | xcpretty
+        run: xcodebuild clean test -scheme NasaImage -destination platform=iOS\ Simulator,OS=14.5,name=iPhone\ 11 -derivedDataPath build | xcpretty
       - name: Convert Coverage
         run: bash coverage build/Logs/Test/*.xcresult/ > code-coverage.xml
       - name: Upload Coverage

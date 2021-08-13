@@ -4,7 +4,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=wjthieme_nasa-image&metric=alert_status)](https://sonarcloud.io/dashboard?id=wjthieme_nasa-image)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=wjthieme_nasa-image&metric=coverage)](https://sonarcloud.io/dashboard?id=wjthieme_nasa-image)
 
-With the Nasa Image Search app you can browse and search Nasa images. This app uses the freely available [Nasa Images API](https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf). The app is set up using the MVVM architecture pattern to achieve high code coverage. The app uses Unit Tests to test most of the application logic and Snapshot Tests to test the UI layer. The UI elements are writing in code using UIKit.
+With the Nasa Image Search app you can browse and search Nasa images. This app uses the freely available [Nasa Images API](https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf). The app is set up using the MVVM architecture pattern to achieve high code coverage. The app uses Unit Tests to test most of the application logic and Snapshot Tests to test the UI layer. The UI elements are written in code using UIKit.
 
 The app supports the following platforms:
 * iOS 13+
